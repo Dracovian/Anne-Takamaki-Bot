@@ -1,4 +1,4 @@
-from os import makedirs, unlink, path
+from os import makedirs, getenv, unlink, path
 from json import dumps, loads
 from datetime import datetime
 from html import unescape
@@ -49,8 +49,7 @@ def get_image(posts=None):
             if bindata is None or len(bindata) == 0:
                 return None
 
-            cachedir = path.join('/', 'home', 'dracovian', 'PycharmProjects', 'Bots', 'Takamaki', 'program', 'cache')
-            # cachepath = path.join('/', 'home', 'dracoviandev', 'Bots', 'Takamaki', 'program', 'cache')
+            cachedir = path.join(getenv('HOME'), 'Bots', 'Takamaki', 'program', 'cache')
             if not path.exists(cachedir):
                 makedirs(cachedir)
 
@@ -73,8 +72,7 @@ def search(term, next=None, posts=None, recurse=None):
     if recurse is None:
         recurse = 26
 
-    cachepath = path.join('/', 'home', 'dracovian', 'PycharmProjects', 'Bots', 'Takamaki', 'program', 'cache')
-    # cachepath = path.join('/', 'home', 'dracoviandev', 'Bots', 'Takamaki', 'program', 'cache')
+    cachepath = path.join(getenv('HOME'), 'Bots', 'Takamaki', 'program', 'cache')
     cachefile = path.join(cachepath, f'{md5(term.encode()).hexdigest()}.json')
 
     if not path.exists(cachepath):
