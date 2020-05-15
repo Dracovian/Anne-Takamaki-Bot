@@ -9,6 +9,8 @@ The default homedir for the script is set to $HOME/Bots/Takamaki
 You can change this in the following files:
 	commands/__init__.py:9
 	commands/bot_configuration:5
+	commands/scripts/sankakucomplex.py:52
+	commands/scripts/sankakucomplex.py:75
 
 Enter the bot's authorization token in bot.py:82
 
