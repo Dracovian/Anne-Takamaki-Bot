@@ -1,5 +1,5 @@
-from Takamaki.commands import add_command, call_command, init
-from Takamaki.commands.bot_functions import *
+from commands import add_command, call_command, init
+from commands.bot_functions import *
 client = discord.Client()
 
 
